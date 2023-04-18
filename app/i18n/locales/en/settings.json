@@ -5,7 +5,12 @@
         "miru-proxy": "Miru proxy",
         "repository": "Repository",
         "tmdb-key": "TMDB API Key",
-        "language": "Language",
+        "language": {
+            "title": "Language",
+            "auto": "Auto",
+            "zh-CN": "Chinese (Simplified)",
+            "en": "English"
+        },
         "theme": {
             "title": "Theme",
             "light": "Light",

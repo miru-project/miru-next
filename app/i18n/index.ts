@@ -19,7 +19,8 @@ i18next
     .init(getOptions());
 
 export function useTranslation(ns?: string[] | string, options: any = {}) {
-    const lng = cookies.get("language") ?? fallbackLng;
+    const savedLng = cookies.get("language") ?? 'auto';
+    const lng = 'auto' === savedLng ? navigator.language : savedLng ?? fallbackLng;
     if (i18next.resolvedLanguage !== lng) i18next.changeLanguage(lng);
     return useTranslationOrg(ns, options);
 }

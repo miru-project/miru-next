@@ -14,16 +14,22 @@ export default function GeneralTab() {
         value: string;
         label: string;
     }[] = [];
+    languageOptions.push({
+        value: "auto",
+        label: t("general.language.auto"),
+    })
     languages.forEach((language) => {
         languageOptions.push({
             value: language,
-            label: language,
+            label: t(`general.language.${language}`),
         });
     });
 
+    const languageCurrent = "auto" === settingsStore.getSetting("language") ? "auto" : i18n.language;
+
     const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
         settingsStore.setSetting("language", e.target.value);
-        i18n.changeLanguage(e.target.value);
+        i18n.changeLanguage(e.target.value === 'auto' ? navigator.language : e.target.value);
     };
 
     const themeOptions = [
@@ -51,10 +57,10 @@ export default function GeneralTab() {
             <Input title={t("general.repository")} bindKey="miruRepo" />
             <Input title={t("general.tmdb-key")} bindKey="TMDBKey" />
             <Select
-                title={t("general.language")}
+                title={t("general.language.title")}
                 onChange={handleLanguageChange}
                 options={languageOptions}
-                selected={i18n.language}
+                selected={languageCurrent}
             />
             <Select
                 title={t("general.theme.title")}
