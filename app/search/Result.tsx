@@ -19,7 +19,6 @@ export default function Result({
     const {
         data,
         isLoading,
-        isError,
         error,
         hasNextPage,
         fetchNextPage,
@@ -56,17 +55,15 @@ export default function Result({
         );
     }
 
-    if (isError) {
-        return <ErrorView error={error}></ErrorView>;
-    }
-
-    if (!data?.pages || data.pages.length === 0) {
+    // 如果没有数据
+    if (!data || data.pages.length === 0 ) {
         return (
             <div className="mt-28 text-center">
                 <p className="text-2xl font-bold">{t("no-content")}</p>
             </div>
         );
     }
+
 
     return (
         <div>
@@ -97,8 +94,14 @@ export default function Result({
                         ))
                     )}
             </ItemGrid.Grid>
+            {data.pages[data.pages.length - 1].length === 0 && (
+                <div className="m-6 text-center">
+                <p className="text-1xl font-bold">{t("no-more-content")}</p>
+            </div>
+            )}
+            <ErrorView error={error} />
             <div className="text-center">
-                {hasNextPage && (
+                {hasNextPage &&  (
                     <Button className="m-4" onClick={() => fetchNextPage()}>
                         {isFetchingNextPage ? t("loading") : t("more")}
                     </Button>

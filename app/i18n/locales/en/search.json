@@ -1,7 +1,8 @@
 {
     "title": "Search",
     "search-placeholder": "What do you want to see?",
-    "no-content": "No content found >﹏＜",
+    "no-content": "No content found ＞﹏＜",
     "no-extension": "No extension found",
-    "no-extension-tips": "Please install the extension from the extensions page first and then try again!"
+    "no-extension-tips": "Please install the extension from the extensions page first and then try again!",
+    "no-more-content": "No more content ＞﹏＜"
 }
