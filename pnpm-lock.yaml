@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@tanstack/react-query':
     specifier: ^4.0.5
@@ -65,8 +69,8 @@ dependencies:
     specifier: ^3.0.1
     version: 3.0.1
   lucide-react:
-    specifier: ^0.220.0
-    version: 0.220.0(react@18.2.0)
+    specifier: ^0.259.0
+    version: 0.259.0(react@18.2.0)
   mobx:
     specifier: ^6.9.0
     version: 6.9.0
@@ -1996,8 +2000,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-react@0.220.0(react@18.2.0):
-    resolution: {integrity: sha512-bYtGUsLAWBvZu+BzAU/ziP1gzE4LwMEXLnlgSr1yUKEPPalLG77JLd5GdYebOVkpm+GtqRqnp6tEKDX7Bm8ZlQ==}
+  /lucide-react@0.259.0(react@18.2.0):
+    resolution: {integrity: sha512-dFBLc6jRDfcpD9NQ7NyFVa+YR3RHX6+bs+f/UiotvNPho+kd4WyeXWMCCchUf7i/pq3BAaHkbmtkbx/GxxHVUw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
